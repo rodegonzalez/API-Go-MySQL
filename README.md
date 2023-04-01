@@ -14,6 +14,27 @@ Execute 'go run .' in a terminal in the folder where this code has been download
 
 Test API using postman or similar.
 
+## Available EndPoints
+* (GET) "/" - It returns a simple message "It works!".
+* (GET) "/api/items" - It returns a complete list of items in database.
+* (GET) "/api/item/{id}" - It returns the item with id={id}.
+* (POST) "/api/item" - It creates a new item. Http Body must have a json element like {"name": "the-new-item-name", "description": "the-new-item-description"} 
+* (POST) "/api/item/{id}" - It updates the item with id={id}. Http Body must have a json element like {"name": "the-item-name", "description": "the-item-description"}.
+* (DELETE) "/api/item/{id}" - It deletes the item with id={id}. 
+
+## Database spec
+Mysql database.
+See configuration section in _main.go_ file for modifications.
+dbname = test
+dbuser = test
+dbpass = test
+
+Table used in this exercise: items(
+    id int,
+    name varchar(45),
+    description varchar(45)
+)
+
 # License
 Distributed under the GNU GENERAL PUBLIC LICENSE. 
 See LICENSE.txt for more information.
